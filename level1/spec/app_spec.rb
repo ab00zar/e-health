@@ -45,14 +45,20 @@ describe Communication do
 
   describe '#additional page price method' do
 
-    context 'when pages number is only one' do
+    context 'when pages number is one' do
+      it 'should return 0' do
+        expect(subject.additional_page_price).to eq(0)
+      end
     end
 
-    context 'when pages number is > one' do
+    let(:two_pages) { described_class.new("pages_number" => 2, "sent_at" => "2019-03-01 18:00:00") }
+    context 'when pages number is > one, 2 for example' do
+      it 'should return 0.07' do
+        expect(two_pages.additional_page_price).to eq(0.07)
+      end
     end
-    
+
   end
-
 
 end
 
