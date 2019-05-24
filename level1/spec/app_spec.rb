@@ -63,12 +63,13 @@ describe Communication do
 end
 
 describe Practitioner do
-  subject {described_class.new(
-    :id => 1, 
-    :first_name => "Aboozar", 
-    :last_name => "Rajabi", 
-    :express_delivery => false)}
-  xit 'is valid with valid attributes' do
-    expect(subject).to be_valid
+  subject { described_class.new(
+    "id" => 1, 
+    "first_name" => "David", 
+    "last_name" => "Beckham", 
+    "express_delivery" => false)}
+  it 'sets each value to its corresponding class attribute' do
+    expect(subject.id).to eq(1)
+    expect(subject.express_delivery).to be_falsy
   end
 end
